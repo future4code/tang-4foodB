@@ -6,7 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Divider from '@material-ui/core/Divider';
-import styled, { EnderecoDiv, InfoDiv, ItensCarrinho, Carrinho, Estabelecimento } from '../Cart/styled';
+import { EnderecoDiv, InfoDiv, ItensCarrinho, Carrinho, Estabelecimento } from '../Cart/styled';
 import CardCart from '../../components/CardCart/CardCart';
 
 

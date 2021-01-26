@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { EditUser } from '../components/EditUser/EditUser';
 import { Profile } from '../screens/Profile/Profile';
 import { EditAddress } from '../components/EditAddress/EditAddress';
+import Cart from '../screens/Cart/Cart';
 
 export const Router = () => {
     return <div>
@@ -39,7 +40,7 @@ export const Router = () => {
                     <EditAddress />
                 </Route>
                 <Route exact path="/cart">
-                    <p>Carrinho</p>
+                    <Cart />
                 </Route>
             </Switch>
         </BrowserRouter>
