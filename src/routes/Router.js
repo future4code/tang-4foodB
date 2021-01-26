@@ -4,45 +4,54 @@ import { EditUser } from '../components/EditUser/EditUser';
 import { Profile } from '../screens/Profile/Profile';
 import { EditAddress } from '../components/EditAddress/EditAddress';
 import Cart from '../screens/Cart/Cart';
+import {SearchRestaurant} from '../components/SearchRestaurant/SearchRestaurant'
+import {OrderInProgress} from '../components/OrderInProgress/OrderInProgress'
+
 
 export const Router = () => {
     return <div>
         <BrowserRouter>
-            <Switch>
-                <Route exact path="/">
-                    <p>Splash</p>
-                </Route>
-                <Route exact path="/login">
-                    <p>Login</p>
-                </Route>
-                <Route exact path="/signup">
-                    <p>Sign up</p>
-                </Route>
-                <Route exact path="/address">
-                    <p>Address</p>
-                </Route>
-                <Route exact path="/feed">
-                    <p>Feed</p>
-                </Route>
-                <Route exact path="/search">
-                    <p>Search</p>
-                </Route>
-                <Route exact path="/search/results">
-                    <p>Search Results</p>
-                </Route>
-                <Route exact path="/profile">
-                    <Profile />
-                </Route>
-                <Route exact path="/profile/edit/user">
-                    <EditUser />
-                </Route>
-                <Route exact path="/profile/edit/address">
-                    <EditAddress />
-                </Route>
-                <Route exact path="/cart">
-                    <Cart />
-                </Route>
-            </Switch>
+        <Switch>
+            <Route exact path="/">
+                <p>Splash</p>
+            </Route>
+            <Route exact path="/login">
+                <p>Login</p>
+            </Route>
+            <Route exact path="/signup">
+                <p>Sign up</p>
+            </Route>
+            <Route exact path="/address">
+                <p>Address</p>
+            </Route>
+            <Route exact path="/feed">
+                <p>Feed</p>
+            </Route>
+            <Route exact path="/search">
+                <p>Search</p>
+            </Route>
+            <Route exact path="/search/results">
+                <p>Search Results</p>
+            </Route>
+            <Route exact path="/search/restaurant">
+                <SearchRestaurant />
+            </Route>
+            <Route exact path="/in-progress">
+                <OrderInProgress />
+            </Route>
+            <Route exact path="/profile">
+                <Profile />
+            </Route>
+            <Route exact path="/profile/edit/user">
+                <EditUser />
+            </Route>
+            <Route exact path="/profile/edit/address">
+                <EditAddress />
+            </Route>
+            <Route exact path="/cart">
+                <Cart />
+            </Route>
+        </Switch>
         </BrowserRouter>
-    </div>
+    </div >
 }
