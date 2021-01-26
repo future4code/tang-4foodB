@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 
 export const ContainerProfile = styled.div`
-width: 70rem;
-height: 10rem;
+width: 22.5rem;
+height: fit-content;
 display: flex;
 flex-direction: column;
 justify-content: center;

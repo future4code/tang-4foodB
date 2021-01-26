@@ -1,11 +1,11 @@
 import React from 'react';
-import styled, { CardDiv, ImgURL, Imagem, Descricao, Outros } from '../Card-Cart/styled';
+import { CardDiv, ImgURL, Imagem, Descricao, Outros } from './styled';
 
 function CardCart() {
   return (
         <CardDiv>
             <Imagem>
-                <img id='imagem' src={ImgURL}/>
+                <img id='imagem' src={ImgURL} alt=""/>
             </Imagem>
             <Descricao>
                 <h4 id="titulo">Hamburguer</h4>
