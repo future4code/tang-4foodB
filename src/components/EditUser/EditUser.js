@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import useForm from '../../hooks/useForm';
 import anterior from '../../img/anterior.png';
 
-export const ProfileUser = () => {
+export const EditUser = () => {
   const [form, handleInput] = useForm({name: "", email:"", cpf:""})
 
     return (

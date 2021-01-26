@@ -1,10 +1,9 @@
-import { AppBar } from '@material-ui/core';
+// import { AppBar } from '@material-ui/core';
 import React from 'react';
-import App from '../../App';
 import {ContainerProfile, TitlePerfil, ContainerBar, RegisterAdress, DataUser, ImgEditar, Requests, LineBlack} from './styled';
 import  botaoEditar from '../../img/botaoEditar.png';
 
-export const ProfilePage = () => {
+export const Profile = () => {
 
     return (
     <ContainerProfile>

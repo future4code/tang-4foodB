@@ -1,23 +1,47 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import {ProfileUser} from '../components/ProfileUser/ProfileUser';
-import {ProfilePage} from '../components/ProfilePage/ProfilePage';
-import {ProfileAddress} from '../components/ProfileAddress/ProfileAddress';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { EditUser } from '../components/EditUser/EditUser';
+import { Profile } from '../screens/Profile/Profile';
+import { EditAddress } from '../components/EditAddress/EditAddress';
 
 export const Router = () => {
     return <div>
         <BrowserRouter>
-        <Switch>
-            <Route exact path="/user">
-                <ProfileUser/>
-            </Route>
-            <Route exact path="/page">
-                <ProfilePage/>
-            </Route>
-            <Route exact path="/address">
-                <ProfileAddress/>
-            </Route>
-        </Switch>
+            <Switch>
+                <Route exact path="/">
+                    <p>Splash</p>
+                </Route>
+                <Route exact path="/login">
+                    <p>Login</p>
+                </Route>
+                <Route exact path="/signup">
+                    <p>Sign up</p>
+                </Route>
+                <Route exact path="/address">
+                    <p>Address</p>
+                </Route>
+                <Route exact path="/feed">
+                    <p>Feed</p>
+                </Route>
+                <Route exact path="/search">
+                    <p>Search</p>
+                </Route>
+                <Route exact path="/search/results">
+                    <p>Search Results</p>
+                </Route>
+                <Route exact path="/profile">
+                    <Profile />
+                </Route>
+                <Route exact path="/profile/edit/user">
+                    <EditUser />
+                </Route>
+                <Route exact path="/profile/edit/address">
+                    <EditAddress />
+                </Route>
+                <Route exact path="/cart">
+                    <p>Carrinho</p>
+                </Route>
+            </Switch>
         </BrowserRouter>
     </div>
 }

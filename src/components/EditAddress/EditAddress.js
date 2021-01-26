@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import useForm from '../../hooks/useForm';
 import anterior from '../../img/anterior.png';
 
-export const ProfileAddress = () => {
+export const EditAddress = () => {
   const [form, handleInput] = useForm({logradouro: "", numero:"", complemento:"", bairro:"", cidade:"", estado:""})
 
     return (
