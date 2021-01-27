@@ -4,8 +4,9 @@ import { EditUser } from '../components/EditUser/EditUser';
 import { Profile } from '../screens/Profile/Profile';
 import { EditAddress } from '../components/EditAddress/EditAddress';
 import Cart from '../screens/Cart/Cart';
-import {SearchRestaurant} from '../components/SearchRestaurant/SearchRestaurant'
+import {Search} from '../screens/Search/Search'
 import {OrderInProgress} from '../components/OrderInProgress/OrderInProgress'
+import { RestaurantDetail } from '../screens/RestaurantDetail/RestaurantDetail';
 
 
 export const Router = () => {
@@ -28,16 +29,16 @@ export const Router = () => {
                 <p>Feed</p>
             </Route>
             <Route exact path="/search">
-                <p>Search</p>
+                <Search/>
             </Route>
             <Route exact path="/search/results">
                 <p>Search Results</p>
             </Route>
             <Route exact path="/search/restaurant">
-                <SearchRestaurant />
+                <p>Search</p>
             </Route>
-            <Route exact path="/in-progress">
-                <OrderInProgress />
+            <Route exact path="/restaurant">
+                <RestaurantDetail/>
             </Route>
             <Route exact path="/profile">
                 <Profile />
