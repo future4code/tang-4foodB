@@ -6,6 +6,7 @@ export const Carrinho = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: Roboto;
    
 `
 export const EnderecoDiv = styled.div`
@@ -63,7 +64,7 @@ export const InfoDiv = styled.div`
     flex-direction: column;
     margin: 0 20px 0 20px; 
     button {
-        background-color: #f44336;
+        background-color: #e8222e;
         color: black;
         width: 90vw;
         height: 6vh;
