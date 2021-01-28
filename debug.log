@@ -2,3 +2,6 @@
 [0124/144655.405:ERROR:crash_report_database_win.cc(455)] unexpected header
 [0124/150523.285:ERROR:crash_report_database_win.cc(455)] unexpected header
 [0126/104111.660:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema n�o pode encontrar o caminho especificado. (0x3)
+[0126/201921.084:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0127/154432.598:ERROR:crash_report_database_win.cc(455)] unexpected header
+[0127/160640.691:ERROR:crash_report_database_win.cc(455)] unexpected header
