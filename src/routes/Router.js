@@ -8,13 +8,14 @@ import {Search} from '../screens/Search/Search'
 import {OrderInProgress} from '../components/OrderInProgress/OrderInProgress'
 import { RestaurantDetail } from '../screens/RestaurantDetail/RestaurantDetail';
 import Error from "../screens/Error/Error";
+import Splash from "../screens/Splash/Splash"
 
 export const Router = () => {
     return <div>
         <BrowserRouter>
         <Switch>
             <Route exact path="/">
-                <p>Splash</p>
+                <Splash />
             </Route>
             <Route exact path="/login">
                 <p>Login</p>
