@@ -4,6 +4,11 @@ import { EditUser } from '../components/EditUser/EditUser';
 import { Profile } from '../screens/Profile/Profile';
 import { EditAddress } from '../components/EditAddress/EditAddress';
 import Cart from '../screens/Cart/Cart';
+import {SearchRestaurant} from '../components/SearchRestaurant/SearchRestaurant';
+import {LoginUser} from '../screens/LoginUser/LoginUser';
+import { SignUp } from '../screens/SignUp/SignUp';
+import { Address } from '../screens/Address/Address';
+import { Splash } from '../screens/Splash/Splash';
 import {Search} from '../screens/Search/Search'
 import {OrderInProgress} from '../components/OrderInProgress/OrderInProgress'
 import { RestaurantDetail } from '../screens/RestaurantDetail/RestaurantDetail';
@@ -15,16 +20,16 @@ export const Router = () => {
         <BrowserRouter>
         <Switch>
             <Route exact path="/">
-                <Splash />
+                <Splash/>
             </Route>
             <Route exact path="/login">
-                <p>Login</p>
+                <LoginUser/>
             </Route>
             <Route exact path="/signup">
-                <p>Sign up</p>
+                <SignUp/>
             </Route>
             <Route exact path="/address">
-                <p>Address</p>
+                <Address/>
             </Route>
             <Route exact path="/feed">
                 <p>Feed</p>

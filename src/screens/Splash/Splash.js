@@ -1,10 +1,13 @@
-import React from "react"
-import {} from "./styled"
+import React from 'react';
+import styled, { SplashContainer } from './styled';
+import logobranco from '../../img/logobranco.png';
 
-export default function Splash() {
+
+export const Splash = () => {
 
     return (
-        <p>Splash</p>
+        <SplashContainer>
+            <img src={logobranco}></img>
+        </SplashContainer>
     )
-    
 }
