@@ -1,6 +1,6 @@
 import React from 'react';
 import image from '../../img/image.jpg'
-import { TitleParagraph } from '../RestaurantDetailCard/styled';
+//import { TitleParagraph } from '../RestaurantDetailCard/styled';
 import {RestContainer, StyledImage, RedTitleCard, DetailText, DetailContainer} from './styled'
 
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from '../../img/logo.png';
-import styled, { FormContainer, Logo, Button, SignUpContainer } from './styled';
+import { FormContainer, Logo, Button, SignUpContainer } from './styled';
 import TextField from '@material-ui/core/TextField';
-import useForm from '../../hooks/useForm';
+//import useForm from '../../hooks/useForm';
 
 
 
