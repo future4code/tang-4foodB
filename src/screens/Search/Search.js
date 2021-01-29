@@ -7,8 +7,6 @@ import { RestaurantCard } from '../../components/RestaurantCard.js/RestaurantCar
 
 
 export const Search = () => {
-   
-   
 
     return (
         <MainDiv>
