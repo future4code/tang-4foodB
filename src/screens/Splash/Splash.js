@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { SplashContainer } from './styled';
+import { SplashContainer } from './styled';
 import logobranco from '../../img/logobranco.png';
 
 
