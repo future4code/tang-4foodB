@@ -1,28 +1,34 @@
 // import { AppBar } from '@material-ui/core';
 import React from 'react';
-import {ContainerProfile, TitlePerfil, ContainerBar, RegisterAdress, DataUser, ImgEditar, Requests, LineBlack} from './styled';
+import {ContainerProfile, TitlePerfil, RegisterAdress,BarProfile, DataUser, ImgEdit1,ImgEdit2, Requests, LineBlack} from './styled';
 import  botaoEditar from '../../img/botaoEditar.png';
 
 export const Profile = () => {
-
+//usei <br> no texto para dar espaço//
     return (
     <ContainerProfile>
-    <ContainerBar>
+    <BarProfile>
     <TitlePerfil>
-    Meu Perfil 
+       Meu Perfil 
     </TitlePerfil>
+    </BarProfile>
     <DataUser>
-        Bruna Oliveira
-        <ImgEditar src={botaoEditar}/>
+       Bruna Oliveira
+       <br></br>
+       bruna_o@gmail.com
+       <br></br>
+       33333.3333
+    <ImgEdit1 src={botaoEditar}/>
     </DataUser>
     <RegisterAdress>
-        Endereço cadastrado
-        <ImgEditar src={botaoEditar}/>
+       Endereço cadastrado
+       <br></br>
+       Rua Alessandra Vieira, 42 - Santana
+        <ImgEdit2 src={botaoEditar}/>
     </RegisterAdress>
     <Requests>Histórico de pedidos</Requests>
     <LineBlack></LineBlack>
     <p>Você não realizou nenhum pedido</p>
-    </ContainerBar>
     </ContainerProfile>
    
     )
