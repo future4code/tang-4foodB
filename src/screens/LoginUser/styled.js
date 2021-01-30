@@ -36,4 +36,5 @@ export const Button = styled.button`
     width: 22.5rem;
     height: 2.625rem;
     margin-bottom: 10px;
+    margin-top: 20px;
 `

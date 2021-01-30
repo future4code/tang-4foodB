@@ -7,6 +7,10 @@ import anterior from '../../img/anterior.png';
 export const EditAddress = () => {
   const [form, handleInput] = useForm({logradouro: "", numero:"", complemento:"", bairro:"", cidade:"", estado:""})
 
+  const submitForm = () =>{
+
+  }
+
     return (
         
         <UserContainer>
@@ -14,7 +18,7 @@ export const EditAddress = () => {
              <ImgIcon src={anterior}/>
                 Endereço
             </DivTitle>
-        <FormContainer>
+        <FormContainer id={"editadd_form"} onSubmit={submitForm}>
         <TextField
           value={form.logradouro}
           onChange={handleInput}

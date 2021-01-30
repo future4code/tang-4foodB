@@ -5,7 +5,7 @@ import { Profile } from '../screens/Profile/Profile';
 import { EditAddress } from '../components/EditAddress/EditAddress';
 import Cart from '../screens/Cart/Cart';
 import {LoginUser} from '../screens/LoginUser/LoginUser';
-import { SignUp } from '../screens/Signup/SignUp';
+import { SignUp } from '../screens/SignUp/SignUp';
 import { Address } from '../screens/Address/Address';
 import { Splash } from '../screens/Splash/Splash';
 import {Search} from '../screens/Search/Search'
