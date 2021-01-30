@@ -7,6 +7,7 @@ import useForm from '../../hooks/useForm';
 import { goToSignup } from "../../routes/Coordinator";
 import {UrlApi} from '../../constants/urls'
 import axios from 'axios';
+import useProtected from '../../hooks/useProtected';
 
 export const LoginUser = () => {
     const history = useHistory();
@@ -16,22 +17,31 @@ export const LoginUser = () => {
 });
 
 
-    const login = () => {
+    const login = (event) => {
+        console.log("porracaraio")
+        event.preventDefault()
         const body = {
             email: form.email,
             password: form.password
           };
       
           axios
-            .post(`${UrlApi}/login`, body)
+            .post(`${UrlApi}/login`, body, {
+                headers: {
+                  "Content-Type": "application/json"
+                }
+              })
             .then((response) => {
               localStorage.setItem("token", response.data.token);
-              history.push("/feed");
+              history.push("/feed"); 
+              console.log(response)
+              console.log("eais")
             })
             .catch((error) => {
               console.log(error)
               });
     }
+    
 
     return (
         <LoginContainer>
@@ -58,7 +68,7 @@ export const LoginUser = () => {
                         variant="outlined" 
                         onChange={onChangeForm} 
                         value={form.password}/>
-                    <Button> Entrar</Button>
+                    <Button>Entrar</Button>
                 </FormContainer>
             </form>
             <p>Não possui cadastro?</p>

@@ -1,4 +1,4 @@
-/* import React, { useState } from "react";
+import React, { useState } from "react";
 import GlobalStateContext from "../global/GlobalStateContext";
 import axios from "axios";
 
@@ -23,4 +23,4 @@ const GlobalState = (props) => {
   );
 };
 
-export default GlobalState; */
+export default GlobalState; 

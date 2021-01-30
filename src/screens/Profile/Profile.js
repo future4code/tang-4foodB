@@ -1,12 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {ContainerProfile, TitlePerfil, RegisterAdress,BarProfile, DataUser, ImgEdit1,ImgEdit2, Requests, LineBlack} from './styled';
 import  botaoEditar from '../../img/botaoEditar.png';
 import { TopBar } from '../../components/TopBar/TopBar';
 import useProtected from '../../hooks/useProtected'
+import {UrlApi} from '../../constants/urls'
+import axios from 'axios';
 
 export const Profile = () => {
    useProtected();
-//usei <br> no texto para dar espaço//
+   
+   const getUser = () => {
+
+      axios
+      .get(`${UrlApi}/profile`, {
+         headers: {
+            auth: localStorage.getItem('token')
+         }
+      })
+      .then((response) => {
+          console.log(response)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+      }  
+   
+   useEffect(() => {
+         getUser();
+      }, []);
+         
+         //usei <br> no texto para dar espaço//
     return (
     <ContainerProfile>
        <TopBar/> 
