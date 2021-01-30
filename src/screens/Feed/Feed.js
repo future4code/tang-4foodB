@@ -11,6 +11,8 @@ import { Filter } from '../../components/Filter/Filter';
 
 export const Feed = () => {
     const history = useHistory();
+
+
     return (
         <MainDiv>
             <TopBar />

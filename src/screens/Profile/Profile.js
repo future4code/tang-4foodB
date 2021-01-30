@@ -2,9 +2,10 @@ import React from 'react';
 import {ContainerProfile, TitlePerfil, RegisterAdress,BarProfile, DataUser, ImgEdit1,ImgEdit2, Requests, LineBlack} from './styled';
 import  botaoEditar from '../../img/botaoEditar.png';
 import { TopBar } from '../../components/TopBar/TopBar';
+import useProtected from '../../hooks/useProtected'
 
 export const Profile = () => {
-
+   useProtected();
 //usei <br> no texto para dar espaço//
     return (
     <ContainerProfile>
