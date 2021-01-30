@@ -8,7 +8,7 @@ export const Splash = () => {
     const history = useHistory();
     return (
         <SplashContainer onClick={() => goToLogin(history)}>
-            <img src={logobranco}></img>
+            <img src={logobranco} alt="4FoodB"></img>
         </SplashContainer>
     )
 }

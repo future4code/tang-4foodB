@@ -24,7 +24,7 @@ export const Feed = () => {
                     onClick= {() => goToSearch(history,"teste")}
                     InputProps={{startAdornment: (
                         <InputAdornment position="start">
-                        <img src={search}/>
+                        <img src={search} alt="Search"/>
                         </InputAdornment>
                     )}}
             

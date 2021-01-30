@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import logo from '../../img/logo.png';
 import { FormContainer, Logo, Button, SignUpContainer } from './styled';
 import TextField from '@material-ui/core/TextField';
-
 import useForm from '../../hooks/useForm';
 import { goToAddress } from "../../routes/Coordinator";
 
@@ -18,9 +17,9 @@ export const SignUp = () => {
         confirmPassword: '',       
 });
 
-const onSubmitForm = () => {
+//const onSubmitForm = () => {
 //importar form do material e fazer validação de cpf e confirmação de senha
-}
+//}
     return (
         <SignUpContainer>
             <Logo src={logo}></Logo>
@@ -81,8 +80,8 @@ const onSubmitForm = () => {
                 value={form.confirmPassword}/>
 
             </FormContainer>
-            {/* <Button onClick={()=> goToAddress(history)}> Criar</Button> */}
-            <Button onClick={()=> console.log(form)}> Criar</Button>
+            <Button onClick={()=> goToAddress(history)}> Criar</Button>
+            {/* <Button onClick={()=> console.log(form)}> Criar</Button> */}
         </SignUpContainer>
     )
 }

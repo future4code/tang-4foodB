@@ -16,7 +16,7 @@ export const TopBar = () => {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={()=> history.goBack()}>
-            <img height="15rem" src={anterior}></img>
+            <img height="15rem" src={anterior} alt="Back"></img>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             4FoodB

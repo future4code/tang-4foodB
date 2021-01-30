@@ -10,10 +10,7 @@ import { goToSignup } from "../../routes/Coordinator";
 export const LoginUser = () => {
     const history = useHistory();
 
-    const login = (user, password) => {
-        //função de login
-    }
-
+ 
     return (
         <LoginContainer>
             <Logo src={logo}></Logo>

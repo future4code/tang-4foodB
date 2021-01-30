@@ -1,7 +1,6 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-//import logo from '../../img/logo.png';
-import { FormContainer, Logo, Button, AddressContainer } from './styled';
+import { FormContainer, Button, AddressContainer } from './styled';
 import TextField from '@material-ui/core/TextField';
 import useForm from '../../hooks/useForm';
 import { goToFeed } from "../../routes/Coordinator";
@@ -9,14 +8,14 @@ import { goToFeed } from "../../routes/Coordinator";
 
 export const Address = () => {
     const history = useHistory();
-    const form = useForm(
-        
-    );
+    const [form, onChangeForm] = useForm({
+        street: '',
+    });
     return (
         <AddressContainer>
             <h3>Meu Endereço</h3>
             <FormContainer>
-                <TextField required id="logradouro" label="Logradouro" variant="outlined" placeholder="Rua / Av."/>
+                <TextField required id="logradouro" name="street" value={form.street} label="Logradouro" variant="outlined" placeholder="Rua / Av." onChange={onChangeForm}/>
                 <br/>
                 <TextField required id="numero" label="Número" type="number" placeholder="Número" variant="outlined"/>
                 <br/>

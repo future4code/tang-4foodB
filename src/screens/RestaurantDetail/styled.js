@@ -1,13 +1,12 @@
-
 import styled from 'styled-components';
 
 /* Estilos RestaurantDetail */
 export const MainDiv = styled.div`
-    width: 375px;
-    height: 667px;
+    width: 22,5rem;
+    height: fit-content;
     padding: 0 0;
-    margin-top: -20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 `
