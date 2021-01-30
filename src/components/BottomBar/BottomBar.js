@@ -21,15 +21,15 @@ export const BottomBar = () => {
         <Toolbar className={classes.appBar}>
 
           <IconButton edge="start" color="inherit" aria-label="open drawer" onClick={()=> goToFeed(history)}>
-            <img src={homePage} />
+            <img src={homePage} alt="Home" />
           </IconButton>
 
           <IconButton color="inherit" onClick={()=> goToCart(history)}>
-          <img src={shopCart} />
+          <img src={shopCart} alt={"Cart"}/>
           </IconButton>
 
           <IconButton edge="end" color="inherit" onClick={()=> goToProfile(history)}>
-          <img src={avatar} />
+          <img src={avatar} alt="Profile" />
           </IconButton>
       
         </Toolbar>

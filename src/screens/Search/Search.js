@@ -29,7 +29,7 @@ export const Search = () => {
                         variant={'outlined'}
                         InputProps={{startAdornment: (
                             <InputAdornment position="start">
-                            <img src={search}/>
+                            <img src={search} alt={"Search"}/>
                             </InputAdornment>
                         )}}
                 

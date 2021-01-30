@@ -1,8 +1,6 @@
-import { AppBar } from '@material-ui/core';
 import React from 'react';
-import {DishesContainer, TinyImage, TitleParagraph,  TinyDetailParagraph, TinyDiv, PriceParagraph, AddButton, RmvButton} from './styled'
+import {DishesContainer, TinyImage, TitleParagraph,  TinyDetailParagraph, TinyDiv, PriceParagraph, RmvButton} from './styled'
 import food from "../../img/food.jpg"
-import App from '../../App';
 
 
 export const SideDishes = () => {

@@ -1,0 +1,1 @@
+export const UrlApi = "https://us-central1-missao-newton.cloudfunctions.net/fourFoodB"

@@ -5,7 +5,8 @@ import { FormContainer, LoginContainer, Logo, Button } from './styled';
 import TextField from '@material-ui/core/TextField';
 import useForm from '../../hooks/useForm';
 import { goToSignup } from "../../routes/Coordinator";
-
+import {UrlApi} from '../../constants/urls'
+import axios from 'axios';
 
 export const LoginUser = () => {
     const history = useHistory();
@@ -15,8 +16,21 @@ export const LoginUser = () => {
 });
 
 
-    const login = (email, password) => {
-        //função de login
+    const login = () => {
+        const body = {
+            email: form.email,
+            password: form.password
+          };
+      
+          axios
+            .post(`${UrlApi}/login`, body)
+            .then((response) => {
+              localStorage.setItem("token", response.data.token);
+              history.push("/feed");
+            })
+            .catch((error) => {
+              console.log(error)
+              });
     }
 
     return (

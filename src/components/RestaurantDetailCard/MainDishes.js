@@ -1,7 +1,6 @@
-import { AppBar } from '@material-ui/core';
 import React from 'react';
-import {ItemPopUp} from './ItemPopUp'
-import {DishesContainer, TinyImage, TitleParagraph,  TinyDetailParagraph, TinyDiv, PriceParagraph, AddButton, RmvButton} from './styled'
+//import {ItemPopUp} from './ItemPopUp'
+import {DishesContainer, TinyImage, TitleParagraph,  TinyDetailParagraph, TinyDiv, PriceParagraph, AddButton} from './styled'
 import food from "../../img/food.jpg"
 
 
