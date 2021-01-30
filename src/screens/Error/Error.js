@@ -1,13 +1,13 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
-import {goToHome} from "../../routes/Coordinator"
+import {BottomBar} from "../../components/BottomBar/BottomBar"
+import { TopBar } from "../../components/TopBar/TopBar";
 
 const Error = () => {
-    const history = useHistory()
 
 return (<div>
+        <TopBar />
         <p>Essa página não existe</p>
-        <button onClick={()=> goToHome(history)}>Voltar</button>
+        <BottomBar />
     </div>)
 }
 

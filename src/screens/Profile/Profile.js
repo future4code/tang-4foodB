@@ -2,11 +2,13 @@
 import React from 'react';
 import {ContainerProfile, TitlePerfil, RegisterAdress,BarProfile, DataUser, ImgEdit1,ImgEdit2, Requests, LineBlack} from './styled';
 import  botaoEditar from '../../img/botaoEditar.png';
+import { TopBar } from '../../components/TopBar/TopBar';
 
 export const Profile = () => {
 //usei <br> no texto para dar espaço//
     return (
     <ContainerProfile>
+       <TopBar/> 
     <BarProfile>
     <TitlePerfil>
        Meu Perfil 

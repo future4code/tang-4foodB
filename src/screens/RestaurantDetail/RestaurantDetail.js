@@ -1,15 +1,17 @@
-import { AppBar } from '@material-ui/core';
 import React from 'react';
 import {SideDishes} from '../../components/RestaurantDetailCard/SideDishes'
 import {MainDishes} from '../../components/RestaurantDetailCard/MainDishes'
 import { MainDiv, RestaurantContainer, DetailParagraphContainer, ExtrasContainer, FirstImage, DetailParagraph, DetailAdress, TitleParagraph, SecondTitleParagraph} from './styled'
 import image from "../../img/image.jpg"
+import { BottomBar } from '../../components/BottomBar/BottomBar';
+import { TopBar } from '../../components/TopBar/TopBar';
 
 
 export const RestaurantDetail = () => {
 
     return (
         <MainDiv>
+            <TopBar />
             <RestaurantContainer>
                 <FirstImage src={image}/>
                 <TitleParagraph>Bullguer Vila Madalena</TitleParagraph>
@@ -28,6 +30,7 @@ export const RestaurantDetail = () => {
                         <SideDishes/>        
                     </ExtrasContainer>
             </RestaurantContainer>
+            <BottomBar />
         </MainDiv>
     )
 }
