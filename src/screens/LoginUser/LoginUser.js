@@ -39,9 +39,25 @@ export const LoginUser = () => {
             <h3>Entrar</h3>
             <form id={"login_form"} onSubmit={login}>
                 <FormContainer>
-                    <TextField required id="email" label="Email" variant="outlined" placeholder="email@email.com" onChange={onChangeForm} value={form.email} />
+                    <TextField 
+                        name={"email"}
+                        required 
+                        id="email" 
+                        label="Email" 
+                        variant="outlined" 
+                        placeholder="email@email.com" 
+                        onChange={onChangeForm} 
+                        value={form.email} />
                     <br />
-                    <TextField required id="password" label="Senha" type="password" placeholder="Mínimo 6 caracteres" variant="outlined" onChange={onChangeForm} value={form.password}/>
+                    <TextField required 
+                        name={"password"}
+                        id="password" 
+                        label="Senha" 
+                        type="password" 
+                        placeholder="Mínimo 6 caracteres" 
+                        variant="outlined" 
+                        onChange={onChangeForm} 
+                        value={form.password}/>
                     <Button> Entrar</Button>
                 </FormContainer>
             </form>
