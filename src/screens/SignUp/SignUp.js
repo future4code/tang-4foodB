@@ -5,6 +5,8 @@ import { FormContainer, Logo, Button, SignUpContainer } from './styled';
 import TextField from '@material-ui/core/TextField';
 import useForm from '../../hooks/useForm';
 import { goToAddress } from "../../routes/Coordinator";
+import axios from 'axios';
+import {UrlApi} from '../../constants/urls'
 
 
 export const SignUp = () => {
@@ -17,11 +19,37 @@ export const SignUp = () => {
         confirmPassword: '',
     });
 
-    const onSubmitForm = () => {
+    const onSubmitForm = (event) => {
+            console.log("porracaraio")
+            event.preventDefault()
+            const body = {
+                name:form.name,
+                email: form.email,
+                cpf: form.cpf,
+                password: form.password
+              };
+          
+              axios
+                .post(`${UrlApi}/signup`, body, {
+                    headers: {
+                      "Content-Type": "application/json"
+                    }
+                  })
+                .then((response) => {
+                  localStorage.setItem("token", response.data.token);
+                  history.push("/feed"); 
+                  console.log(response)
+                  
+                })
+                .catch((error) => {
+                  console.log(error)
+                  });
+        
         //importar form do material e fazer validação de cpf e confirmação de senha
         console.log(form);
-        goToAddress(history);
+       /*  goToAddress(history); */
     }
+    
     return (
         <SignUpContainer>
             <Logo src={logo}></Logo>
