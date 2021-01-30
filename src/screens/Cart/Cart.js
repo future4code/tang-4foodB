@@ -8,11 +8,13 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Divider from '@material-ui/core/Divider';
 import { EnderecoDiv, InfoDiv, ItensCarrinho, Carrinho, Estabelecimento } from '../Cart/styled';
 import CardCart from '../../components/CardCart/CardCart';
+import { TopBar } from '../../components/TopBar/TopBar';
 
 
 function Cart() {
   return (
     <Carrinho>
+      <TopBar />
       <EnderecoDiv>
           <p id="titulo">Endereço de Entrega</p>
           <p id="endereco">Rua Alessandra Vieira, 42</p>

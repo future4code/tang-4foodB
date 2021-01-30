@@ -9,7 +9,8 @@ import { SignUp } from '../screens/Signup/SignUp';
 import { Address } from '../screens/Address/Address';
 import { Splash } from '../screens/Splash/Splash';
 import {Search} from '../screens/Search/Search'
-//import {OrderInProgress} from '../components/OrderInProgress/OrderInProgress'
+import {Feed} from '../screens/Feed/Feed'
+import {OrderInProgress} from '../components/OrderInProgress/OrderInProgress'
 import { RestaurantDetail } from '../screens/RestaurantDetail/RestaurantDetail';
 import Error from "../screens/Error/Error";
 
@@ -30,7 +31,7 @@ export const Router = () => {
                 <Address/>
             </Route>
             <Route exact path="/feed">
-                <p>Feed</p>
+                <Feed />
             </Route>
             <Route exact path="/search/:search">
                 <Search/>

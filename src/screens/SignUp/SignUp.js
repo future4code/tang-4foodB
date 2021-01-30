@@ -1,12 +1,14 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 import logo from '../../img/logo.png';
 import { FormContainer, Logo, Button, SignUpContainer } from './styled';
 import TextField from '@material-ui/core/TextField';
 //import useForm from '../../hooks/useForm';
-
+import { goToAddress } from "../../routes/Coordinator";
 
 
 export const SignUp = () => {
+    const history = useHistory();
 
     return (
         <SignUpContainer>
@@ -23,7 +25,7 @@ export const SignUp = () => {
                 <br/>
                 <TextField required id="confirmar" label="Confirmar" variant="outlined" placeholder="Confirme a senha anterior"/>
             </FormContainer>
-            <Button> Criar</Button>
+            <Button onClick={()=> goToAddress(history)}> Criar</Button>
         </SignUpContainer>
     )
 }

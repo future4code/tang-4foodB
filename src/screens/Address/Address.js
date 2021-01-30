@@ -1,13 +1,14 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
 //import logo from '../../img/logo.png';
 import { FormContainer, Logo, Button, AddressContainer } from './styled';
 import TextField from '@material-ui/core/TextField';
 //import useForm from '../../hooks/useForm';
-
+import { goToFeed } from "../../routes/Coordinator";
 
 
 export const Address = () => {
-
+    const history = useHistory();
     return (
         <AddressContainer>
             <h3>Meu Endereço</h3>
@@ -24,7 +25,7 @@ export const Address = () => {
                 <br/>
                 <TextField required id="estado" label="Estado" variant="outlined" placeholder="Estado"/>
             </FormContainer>
-            <Button>Salvar</Button>
+            <Button onClick={()=> goToFeed(history)}>Salvar</Button>
         </AddressContainer>
     )
 }
