@@ -23,7 +23,7 @@ export const DetailContainer = styled.div`
     margin-left: 16px;
 `
 
-export const RedTitleCard = styled.p`
+export const RedTitleCard = styled.h4`
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: #e8222e;

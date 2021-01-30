@@ -4,16 +4,17 @@ import {MainDiv, FormContainer} from './styled';
 import search from '../../img/search.png'
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
-import { RestaurantCard } from '../../components/RestaurantCard.js/RestaurantCard';
 import { TopBar } from "../../components/TopBar/TopBar";
 import { BottomBar } from '../../components/BottomBar/BottomBar';
-import { goToSearch, goToRestaurant } from "../../routes/Coordinator";
+import { goToSearch } from "../../routes/Coordinator";
+import { Filter } from '../../components/Filter/Filter';
 
 export const Feed = () => {
     const history = useHistory();
     return (
         <MainDiv>
             <TopBar />
+            
             <FormContainer>
                 <TextField
                     name={"restaurante"}
@@ -29,8 +30,7 @@ export const Feed = () => {
             
                 />
             </FormContainer>
-            <RestaurantCard />
-            <RestaurantCard />
+            <Filter />
             <BottomBar />
         </MainDiv>
         
