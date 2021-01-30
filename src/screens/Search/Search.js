@@ -14,7 +14,7 @@ export const Search = () => {
     })
 
     const submitForm = () => {
-
+console.log(search);
     }
 
     return (
@@ -27,6 +27,8 @@ export const Search = () => {
                         margin={'normal'}
                         placeholder="Restaurante"
                         variant={'outlined'}
+                        value={form.search}
+                        onChange={onChangeForm}
                         InputProps={{startAdornment: (
                             <InputAdornment position="start">
                             <img src={search} alt={"Search"}/>
