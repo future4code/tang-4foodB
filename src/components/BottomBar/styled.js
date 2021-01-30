@@ -17,6 +17,9 @@ export const useStyles = makeStyles((theme) => ({
   appBar: {
     top: 'auto',
     bottom: 0,
+    display: 'flex',
+    justifyContent: 'space-around',
+    flexGrow: 1,
   },
   grow: {
     flexGrow: 1,

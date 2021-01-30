@@ -1,11 +1,18 @@
 import React from 'react';
 import { Router } from './routes/Router';
+import { theme } from "./styled";
+import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline'
+import { ThemeProvider } from "@material-ui/core";
+
 
 function App() {
   return (
-    <div>
+    <React.Fragment>
+      <ThemeProvider theme = {theme}>
+      <ScopedCssBaseline />
       <Router/>
-    </div>
+      </ThemeProvider>
+    </React.Fragment>
   );
 }
 
