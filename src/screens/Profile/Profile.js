@@ -1,10 +1,13 @@
-// import { AppBar } from '@material-ui/core';
 import React from 'react';
 import {ContainerProfile, TitlePerfil, RegisterAdress,BarProfile, DataUser, ImgEdit1,ImgEdit2, Requests, LineBlack} from './styled';
 import  botaoEditar from '../../img/botaoEditar.png';
 import { TopBar } from '../../components/TopBar/TopBar';
+import useForm from "../../hooks/useForm";
 
 export const Profile = () => {
+   const form = useForm(
+      
+   );
 //usei <br> no texto para dar espaço//
     return (
     <ContainerProfile>

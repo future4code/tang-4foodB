@@ -3,12 +3,15 @@ import { useHistory } from "react-router-dom";
 //import logo from '../../img/logo.png';
 import { FormContainer, Logo, Button, AddressContainer } from './styled';
 import TextField from '@material-ui/core/TextField';
-//import useForm from '../../hooks/useForm';
+import useForm from '../../hooks/useForm';
 import { goToFeed } from "../../routes/Coordinator";
 
 
 export const Address = () => {
     const history = useHistory();
+    const form = useForm(
+        
+    );
     return (
         <AddressContainer>
             <h3>Meu Endereço</h3>
