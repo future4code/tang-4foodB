@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {ContainerProfile, TitlePerfil, RegisterAdress,BarProfile, DataUser, ImgEdit1,ImgEdit2, Requests, LineBlack} from './styled';
+import {ContainerProfile, TitlePerfil, RegisterAdress,BarProfile,TextRequest, DataUser, ImgEdit1,ImgEdit2, Requests, LineBlack,MessageProfile} from './styled';
 import  botaoEditar from '../../img/botaoEditar.png';
 import { TopBar } from '../../components/TopBar/TopBar';
 import useProtected from '../../hooks/useProtected'
@@ -52,9 +52,11 @@ export const Profile = () => {
        Rua Alessandra Vieira, 42 - Santana
         <ImgEdit2 src={botaoEditar}/>
     </RegisterAdress>
-    <Requests>Histórico de pedidos</Requests>
+    <Requests>
+       <TextRequest>Histórico de pedidos</TextRequest>
+       </Requests>
     <LineBlack></LineBlack>
-    <p>Você não realizou nenhum pedido</p>
+    <MessageProfile>Você não realizou nenhum pedido</MessageProfile>
     </ContainerProfile>
    
     )
