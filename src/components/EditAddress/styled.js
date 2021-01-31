@@ -5,6 +5,9 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+width: 22.5rem;
+height: 40rem;
+padding: 0 0 4.875rem
 `
 export const DivTitle = styled.div`
 width: 10.938rem;
@@ -14,17 +17,29 @@ padding: 0.813rem 4.219rem 0.75rem;
 font-family: Roboto;
 text-align: center;
 `
+export const TitleAddress = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: -30px;
+`
+
 export const ImgIcon = styled.img`
 width: 1.44rem;
 height: 1.5rem;
 margin: 0.625rem 3.373rem 0.625rem 1rem;
 object-fit: contain;
+margin-right: 55vh;
+margin-left: -5vh;
   `
 
 export const FormContainer = styled.div`
 display: flex;
 flex-direction:column;
-width: 500px;
+justify-content: center;
+width: 350px;
+margin-left: 15vh;
+margin-right: 12vh;
 `
 
 export const ButtonSalvar = styled.button`
