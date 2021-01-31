@@ -42,6 +42,7 @@ export const Address = () => {
                   })
                 .then((response) => {                  
                     localStorage.setItem("token", response.data.token)
+                    console.log('token')
                 })
                 .catch((error) => {
                   console.log(error)
