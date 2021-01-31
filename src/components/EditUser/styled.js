@@ -1,15 +1,38 @@
 import styled from 'styled-components';
 
 export const UserContainer = styled.div`
+width: 90%;
+height: 30rem;
 display: flex;
-flex-direction: column;
 justify-content: center;
 align-items: center;
+flex-direction: column;
+font-family: Roboto;
+`
+export const ProfileBar =styled.div`
+width: 22.5rem;
+  height: 4rem;
+  margin: 0 
 `
 export const FormContainer = styled.div`
-display: flex;
-flex-direction:column;
-width: 500px;
+width: 350px;
+  height: 55vh;
+  margin: 0.5rem 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+/*display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20.5rem;
+    height: 55vh;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    input {
+        width: 80vw;
+    }*/
 `
 export const ImgIcon = styled.img`
 width: 1.44rem;
