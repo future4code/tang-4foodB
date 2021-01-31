@@ -1,45 +1,47 @@
 import styled from 'styled-components';
 
 export const UserContainer = styled.div`
-width: 90%;
-height: 30rem;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 22.5rem;
+height: 40rem;
+padding: 0 0 4.875rem
+`
+export const ProfileBar =styled.div`
+width: 10.938rem;
+height: 50px;
+margin: 1.25rem 5.75rem 0 3.373rem;
+padding: 0.813rem 4.219rem 0.75rem;
+font-family: Roboto;
+text-align: center;
+margin-top: -250px;
+`
+export const TitleEdit = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-flex-direction: column;
-font-family: Roboto;
-`
-export const ProfileBar =styled.div`
-width: 22.5rem;
-  height: 4rem;
-  margin: 0 
-`
-export const FormContainer = styled.div`
-width: 350px;
-  height: 55vh;
-  margin: 0.5rem 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-/*display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 20.5rem;
-    height: 55vh;
-    margin-bottom: 30px;
-    margin-top: 10px;
-    input {
-        width: 80vw;
-    }*/
+margin-top: -30px;
 `
 export const ImgIcon = styled.img`
 width: 1.44rem;
 height: 1.5rem;
 margin: 0.625rem 3.373rem 0.625rem 1rem;
 object-fit: contain;
-  `
+margin-right: 55vh;
+margin-left: -5vh;
+`
+export const FormContainer = styled.div`
+display: flex;
+flex-direction:column;
+justify-content: center;
+width: 350px;
+margin-left: 15vh;
+margin-right: 12vh;
+
+`
+
 export const ButtonSalvar = styled.button`
 background-color: #e8222e;
 width: 100%;

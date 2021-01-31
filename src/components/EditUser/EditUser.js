@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserContainer,ProfileBar, FormContainer, ButtonSalvar, ImgIcon } from './styled';
+import { UserContainer,ProfileBar,TitleEdit, FormContainer, ButtonSalvar, ImgIcon } from './styled';
 import TextField from '@material-ui/core/TextField';
 import useForm from '../../hooks/useForm';
 import anterior from '../../img/anterior.png';
@@ -8,11 +8,11 @@ export const EditUser = () => {
   const [form, handleInput] = useForm({name: "", email:"", cpf:""})
 
     return (
-        
+      
         <UserContainer>
             <ProfileBar>
-              Editar
             <ImgIcon src={anterior}/>
+            <TitleEdit>editar</TitleEdit>
             </ProfileBar>
         <FormContainer>
         <TextField
