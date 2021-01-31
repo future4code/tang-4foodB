@@ -3,10 +3,10 @@ import { UserContainer, FormContainer, ButtonSalvar, DivTitle, ImgIcon, TitleAdd
 import TextField from '@material-ui/core/TextField';
 import useForm from '../../hooks/useForm';
 import anterior from '../../img/anterior.png';
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 export const EditAddress = () => {
-  const history = useHistory();
+  // const history = useHistory();
   const [form, handleInput] = useForm({logradouro: "", numero:"", complemento:"", bairro:"", cidade:"", estado:""})
   const submitForm = () =>{
 

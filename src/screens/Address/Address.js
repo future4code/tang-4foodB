@@ -4,13 +4,12 @@ import { useHistory } from "react-router-dom";
 import { FormContainer, Button, AddressContainer } from './styled';
 import TextField from '@material-ui/core/TextField';
 import useForm from '../../hooks/useForm';
-import useProtected from '../../hooks/useProtected';
 import { goToFeed } from "../../routes/Coordinator";
 import {UrlApi} from '../../constants/urls'
 
 
 export const Address = () => {
-    useProtected();
+    
     const history = useHistory();
     const [form, onChangeForm] = useForm({
         street: '',
@@ -24,6 +23,8 @@ export const Address = () => {
     
     const submitAddress = (event) => {
             event.preventDefault()
+            let newToken = '';
+
             const body = {
                     street: form.street,
                     number: form.number,
@@ -33,24 +34,21 @@ export const Address = () => {
                     complement: form.complement
               };
           
-              axios
-                .put(`${UrlApi}/address`, body, {
-                    headers: {
-                        auth: localStorage.getItem("token"),
-                        "Content-Type": "application/json"
-                    }
+              axios.put(`${UrlApi}/address`, body,{
+                        headers: {
+                          auth: localStorage.getItem('token'),
+                          "Content-Type": "application/json"
+                        }
                   })
                 .then((response) => {                  
-                    localStorage.setItem("token", response.data.token)
-                    console.log('token')
+                    newToken = response.data.token
+                    localStorage.setItem('token', newToken);
+                    goToFeed(history); 
                 })
                 .catch((error) => {
-                  console.log(error)
+                  console.log(error.message)
                   });
         
-        //importar form do material e fazer validação de cpf e confirmação de senha
-        console.log(form);
-       /*  goToAddress(history); */
     }
     
 
@@ -66,17 +64,18 @@ export const Address = () => {
                         variant="outlined" 
                         placeholder="Rua / Av." 
                         onChange={onChangeForm} 
-                        value={form.logradouro} />
+                        value={form.street} />
                     <br/>
                     <TextField 
                         required 
                         id="number" 
+                        name="number" 
                         label="Número" 
                         type="number" 
                         placeholder="Número" 
                         variant="outlined" 
                         onChange={onChangeForm} 
-                        value={form.numero}/>
+                        value={form.number}/>
                     <br/>
                     <TextField required 
                         name="complement"
@@ -85,7 +84,7 @@ export const Address = () => {
                         variant="outlined" 
                         placeholder="Apto / Bloco" 
                         onChange={onChangeForm} 
-                        value={form.complemento} />
+                        value={form.complement} />
                     <br/>
                     <TextField required 
                         name="neighbourhood"
@@ -94,7 +93,7 @@ export const Address = () => {
                         variant="outlined" 
                         placeholder="Bairro" 
                         onChange={onChangeForm} 
-                        value={form.bairro}/>
+                        value={form.neighbourhood}/>
                     <br/>
                     <TextField required 
                         name="city"
@@ -103,7 +102,7 @@ export const Address = () => {
                         variant="outlined" 
                         placeholder="Cidade" 
                         onChange={onChangeForm} 
-                        value={form.cidade}/>
+                        value={form.city}/>
                     <br/>
                     <TextField required 
                         name="state"
@@ -112,7 +111,7 @@ export const Address = () => {
                         variant="outlined" 
                         placeholder="Estado" 
                         onChange={onChangeForm} 
-                        value={form.estado}/>
+                        value={form.state}/>
                 </FormContainer>
                 <Button>Salvar</Button>
             </form>
