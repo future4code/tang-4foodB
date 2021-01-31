@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 
 export const RestContainer = styled.div` 
-    align-self: center;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
     margin-bottom: 8px;
     width: 90%;
     height: 11.75rem;
@@ -11,8 +13,8 @@ export const RestContainer = styled.div`
 `
 
 export const StyledImage = styled.img`
-    width: 100%;
-    height: 60%;
+    width: auto;
+    max-height: 60%;
     display: flex;
     margin-top: -1px;
 `

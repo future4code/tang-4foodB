@@ -20,7 +20,6 @@ export const SignUp = () => {
     });
 
     const onSubmitForm = (event) => {
-            console.log("porracaraio")
             event.preventDefault()
             const body = {
                 name:form.name,
@@ -45,9 +44,8 @@ export const SignUp = () => {
                   console.log(error)
                   });
         
-        //importar form do material e fazer validação de cpf e confirmação de senha
         console.log(form);
-       /*  goToAddress(history); */
+        goToAddress(history);
     }
     
     return (
@@ -110,8 +108,8 @@ export const SignUp = () => {
                         onChange={onChangeForm}
                         value={form.confirmPassword} />
 
-                </FormContainer>
                 <Button> Criar</Button>
+                </FormContainer>
             </form>
         </SignUpContainer>
     )

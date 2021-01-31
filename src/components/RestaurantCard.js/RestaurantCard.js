@@ -1,19 +1,18 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
-import image from '../../img/image.jpg'
 import {RestContainer, StyledImage, RedTitleCard, DetailText, DetailContainer} from './styled'
 import { goToRestaurant } from "../../routes/Coordinator";
 
-export const RestaurantCard = () => {
+export const RestaurantCard = (props) => {
     const history = useHistory();
     
      return (
-            <RestContainer onClick={() => {goToRestaurant(history,"teste")}}>
-               <StyledImage src={image}/>
-                <RedTitleCard>Bullguer Vila Madalena</RedTitleCard>
+            <RestContainer onClick={() => {goToRestaurant(history,props.rest.id)}}>
+               <StyledImage src={props.rest.logoUrl}/>
+                <RedTitleCard>{props.rest.name}</RedTitleCard>
                 <DetailContainer>
-                    <DetailText>50 - 60 min</DetailText>
-                    <DetailText>Frete R$6,99</DetailText>
+                    <DetailText>{props.rest.deliveryTime} min</DetailText>
+                    <DetailText>Frete R${props.rest.shipping}</DetailText>
                 </DetailContainer>
             </RestContainer>
         
