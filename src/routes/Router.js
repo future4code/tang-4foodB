@@ -9,7 +9,7 @@ import { SignUp } from '../screens/SignUp/SignUp';
 import { Address } from '../screens/Address/Address';
 import { Splash } from '../screens/Splash/Splash';
 import {Search} from '../screens/Search/Search'
-import {Feed} from '../screens/Feed/Feed'
+import Feed from '../screens/Feed/Feed'
 import {OrderInProgress} from '../components/OrderInProgress/OrderInProgress'
 import { RestaurantDetail } from '../screens/RestaurantDetail/RestaurantDetail';
 import Error from "../screens/Error/Error";
@@ -23,6 +23,7 @@ export const Router = () => {
             </Route>
             <Route exact path="/login">
                 <LoginUser/>
+                {/* Helena */}
             </Route>
             <Route exact path="/signup">
                 <SignUp/>
@@ -32,17 +33,19 @@ export const Router = () => {
             </Route>
             <Route exact path="/feed">
                 <Feed />
+                {/* Paula */}
             </Route>
-            <Route exact path="/search/:search">
-                <Search/>
+            <Route exact path="/search">
+                <Search/> 
             </Route>
-            <Route exact path="/restaurant/:name">
+            <Route exact path="/restaurant/:id">
                 <RestaurantDetail/>
             </Route>
             <Route exact path="/order/:order">
                 <OrderInProgress />
             </Route>
             <Route exact path="/profile">
+                {/* Lê */}
                 <Profile />
             </Route>
             <Route exact path="/profile/edit/user/:user">
@@ -52,7 +55,8 @@ export const Router = () => {
                 <EditAddress />
             </Route>
             <Route exact path="/cart">
-                <Cart />
+                <Cart /> 
+                {/* Helena */}
             </Route>
             <Route >
                 <Error />

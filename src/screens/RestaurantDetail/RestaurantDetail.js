@@ -1,34 +1,43 @@
-import React from 'react';
-import {SideDishes} from '../../components/RestaurantDetailCard/SideDishes'
-import {MainDishes} from '../../components/RestaurantDetailCard/MainDishes'
-import { MainDiv, RestaurantContainer, DetailParagraphContainer, ExtrasContainer, FirstImage, DetailParagraph, DetailAdress, TitleParagraph, SecondTitleParagraph} from './styled'
-import image from "../../img/image.jpg"
+import React, { useContext, useEffect } from 'react';
+import { useParams } from "react-router-dom";
+import { SideDishes } from '../../components/RestaurantDetailCard/SideDishes'
+import { MainDishes } from '../../components/RestaurantDetailCard/MainDishes'
+import { MainDiv, RestaurantContainer, DetailParagraphContainer, ExtrasContainer, FirstImage, DetailParagraph, DetailAdress, TitleParagraph, SecondTitleParagraph } from './styled'
 import { BottomBar } from '../../components/BottomBar/BottomBar';
 import { TopBar } from '../../components/TopBar/TopBar';
+import GlobalStateContext from "../../global/GlobalStateContext";
 
 
 export const RestaurantDetail = () => {
+    const pathParams = useParams();
+    const { states, requests } = useContext(GlobalStateContext);
+
+    useEffect(() => {
+        requests.getRestaurantDetail(pathParams.id)
+    }, [])
 
     return (
         <MainDiv>
             <TopBar />
             <RestaurantContainer>
-                <FirstImage src={image}/>
-                <TitleParagraph>Bullguer Vila Madalena</TitleParagraph>
-                <DetailParagraph>Burger</DetailParagraph>
+                <FirstImage src={states.restaurant.logoUrl} />
+                <TitleParagraph>{states.restaurant.name}</TitleParagraph>
+                <DetailParagraph>{states.restaurant.category}</DetailParagraph>
                 <DetailParagraphContainer>
-                    <DetailParagraph>50 - 60 min</DetailParagraph>
-                    <DetailParagraph>Frete R$5,99</DetailParagraph>
+                    <DetailParagraph>Prazo: {states.restaurant.deliveryTime} min</DetailParagraph>
+                    <DetailParagraph>Frete: R$ {states.restaurant.shipping}</DetailParagraph>
                 </DetailParagraphContainer>
-                <DetailAdress>R. Fradique Coutinho, 1136 - Vila Madalena</DetailAdress>
+                <DetailAdress>{states.restaurant.address}</DetailAdress>
+                {/* renderizar array states.restaurant.produtos */}
                 <SecondTitleParagraph>Principais</SecondTitleParagraph>
-                    <ExtrasContainer>
-                        <MainDishes/>
-                    </ExtrasContainer>
+                <ExtrasContainer>
+                    <MainDishes />
+                </ExtrasContainer>
                 <SecondTitleParagraph>Acompanhamento</SecondTitleParagraph>
-                    <ExtrasContainer>
-                        <SideDishes/>        
-                    </ExtrasContainer>
+                <ExtrasContainer>
+                    <SideDishes />
+                </ExtrasContainer>
+                {/* termina aqui */}
             </RestaurantContainer>
             <BottomBar />
         </MainDiv>

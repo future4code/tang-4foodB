@@ -8,7 +8,6 @@ import { goToSignup } from "../../routes/Coordinator";
 import {UrlApi} from '../../constants/urls'
 import axios from 'axios';
 
-
 export const LoginUser = () => {
     const history = useHistory();
     const [form, onChangeForm] = useForm({
@@ -16,9 +15,7 @@ export const LoginUser = () => {
         password: '',      
 });
 
-
     const login = (event) => {
-        console.log("porracaraio")
         event.preventDefault()
         const body = {
             email: form.email,
@@ -35,7 +32,6 @@ export const LoginUser = () => {
               localStorage.setItem("token", response.data.token);
               history.push("/feed"); 
               console.log(response)
-              console.log("eais")
             })
             .catch((error) => {
               console.log(error)
