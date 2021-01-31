@@ -16,6 +16,20 @@ export const RestaurantDetail = () => {
         requests.getRestaurantDetail(pathParams.id)
     }, [])
 
+    const produtos = states.restaurant.products
+    // const ordenado = produtos.sort( 
+    //     (p1, p2) => {
+    //         if (p1.category < p2.category) {
+    //             return 1
+    //         } else if (p1.category > p2.category) {
+    //             return -1
+    //         } else {
+    //             return 0
+    //         }
+    //     })
+     
+   
+
     return (
         <MainDiv>
             <TopBar />
@@ -31,7 +45,7 @@ export const RestaurantDetail = () => {
                 {/* renderizar array states.restaurant.produtos */}
                 <SecondTitleParagraph>Principais</SecondTitleParagraph>
                 <ExtrasContainer>
-                    <MainDishes />
+                    {/* <MainDishes /> */}
                 </ExtrasContainer>
                 <SecondTitleParagraph>Acompanhamento</SecondTitleParagraph>
                 <ExtrasContainer>

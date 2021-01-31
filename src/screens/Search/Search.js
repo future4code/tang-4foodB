@@ -26,7 +26,6 @@ export const Search = () => {
             (rest) => {
                 return rest.name.indexOf(text) !== -1
             })
-        console.log("Filtrado", filterRest);
         setFiltered(filterRest);
     }
 
