@@ -9,7 +9,8 @@ import Divider from '@material-ui/core/Divider';
 import { EnderecoDiv, InfoDiv, ItensCarrinho, Carrinho, Estabelecimento } from '../Cart/styled';
 import CardCart from '../../components/CardCart/CardCart';
 import { TopBar } from '../../components/TopBar/TopBar';
-import useProtected from '../../hooks/useProtected'
+import useProtected from '../../hooks/useProtected';
+import {BottomBar} from '../../components/BottomBar/BottomBar';
 
 function Cart() {
   useProtected();
@@ -55,7 +56,8 @@ function Cart() {
             </RadioGroup>
         </FormControl>
         <Button variant="contained" color="primary">Confirmar</Button>
-      </InfoDiv>  
+      </InfoDiv>
+      <BottomBar/>  
     </Carrinho>
   );
 }

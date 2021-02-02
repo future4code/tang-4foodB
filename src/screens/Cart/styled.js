@@ -15,6 +15,7 @@ export const EnderecoDiv = styled.div`
     height: 10vh;
     display: flex;
     flex-direction: column;
+    margin-top: 60px;
     p {
         margin: 10px 20px 5px 10px;
     };
@@ -35,7 +36,7 @@ export const Estabelecimento = styled.div`
     width: 100vw;
     display: flex;
     flex-direction: column;
-    margin-top: 90px;
+    margin-top: 150px;
     margin-bottom: 5px;
     margin-left: 10px;
     p {

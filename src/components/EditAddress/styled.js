@@ -9,13 +9,17 @@ width: 22.5rem;
 height: 40rem;
 padding: 0 0 4.875rem
 `
+
 export const DivTitle = styled.div`
-width: 10.938rem;
-height: 2.75rem;
-margin: 1.25rem 5.75rem 0 3.373rem;
-padding: 0.813rem 4.219rem 0.75rem;
-font-family: Roboto;
+width: 100vw;
+height: 2.8rem;
 text-align: center;
+font-size: 18px;
+margin-top: 15px;
+display: flex;
+justify-content: center;
+margin-left: auto;
+margin-right: auto;
 `
 export const TitleAddress = styled.div`
 display: flex;
@@ -31,7 +35,7 @@ margin: 0.625rem 3.373rem 0.625rem 1rem;
 object-fit: contain;
 margin-right: 55vh;
 margin-left: -5vh;
-  `
+`
 
 export const FormContainer = styled.div`
 display: flex;
