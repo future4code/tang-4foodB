@@ -31,7 +31,6 @@ export const LoginUser = () => {
             .then((response) => {
               localStorage.setItem("token", response.data.token);
               history.push("/feed"); 
-              console.log(response)
             })
             .catch((error) => {
               console.log(error)

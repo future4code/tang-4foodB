@@ -21,8 +21,7 @@ export const Profile = () => {
    const [orders, setOrders] = useState([]);
 
    const getProfile = () => {
-      axios
-        .get(`${UrlApi}/profile`, {
+      axios.get(`${UrlApi}/profile`, {
            headers: {
               auth: localStorage.getItem('token'),
               'Content-Type': 'application/json'
@@ -70,6 +69,7 @@ export const Profile = () => {
         });
         
     };
+
    
    useEffect(() => {
       getProfile();
