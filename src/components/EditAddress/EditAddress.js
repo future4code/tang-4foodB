@@ -3,76 +3,113 @@ import { UserContainer, FormContainer, ButtonSalvar, DivTitle, ImgIcon, TitleAdd
 import TextField from '@material-ui/core/TextField';
 import useForm from '../../hooks/useForm';
 import anterior from '../../img/anterior.png';
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import {goToProfile} from "../../routes/Coordinator";
+import {UrlApi} from '../../constants/urls';
+import axios from 'axios';
+
 
 export const EditAddress = () => {
-  // const history = useHistory();
-  const [form, handleInput] = useForm({logradouro: "", numero:"", complemento:"", bairro:"", cidade:"", estado:""})
-  const submitForm = () =>{
+  const history = useHistory();
+  const [form, handleInput] = useForm({street: "", number:"", neighbourhood:"", city:"", state:"", complement:""})
 
-  }
+  
+
+
+const updateProfile = (event) => {
+    event.preventDefault()
+    const body = {
+    street: form.street,
+    number: form.number,
+    neighbourhood: form.neighbourhood,
+    city: form.city,
+    state: form.state,
+    complement: form.complement,
+    }
+      axios
+          .put(`${UrlApi}/address`, body, {
+            headers: {
+              auth: localStorage.getItem('token'),
+              'Content-Type': 'application/json'
+            }
+          })
+          .then((response) => {
+            localStorage.setItem('token', response.data.token)
+            alert('Endereço atualizado com sucesso!')
+            console.log(response.data)
+          })
+          .catch((error) =>{
+            console.log(error.message)
+          })
+}
 
     return (
         
         <UserContainer>
             <DivTitle>
-             <ImgIcon src={anterior}/>
-               <TitleAddress>Endereço</TitleAddress> 
+              <ImgIcon src={anterior} onClick={()=> goToProfile(history)}/>
+              <TitleAddress>Endereço</TitleAddress> 
             </DivTitle>
-        <FormContainer id={"editadd_form"} onSubmit={submitForm}>
+        <FormContainer id={"editadd_form"}> 
         <TextField
-          value={form.logradouro}
+          required
+          value={form.street}
           onChange={handleInput}
-          name={"logradouro"}
+          name={"street"}
           margin={'normal'}
-          label={'Logradouro*'}
+          label={'Logradouro'}
           variant={'outlined'}
         />
         
         <TextField
-        value={form.numero}
+        required
+        value={form.number}
         onChange={handleInput}
-        name={"numero"}
+        name={"number"}
         margin={'normal'}
-        label={'Número*'}
+        label={'Número'}
         variant={'outlined'}
          />
 
          <TextField
-        value={form.complemento}
+        required
+        value={form.complement}
         onChange={handleInput}
-        name={"complemento"}
+        name={"complement"}
         margin={'normal'}
-        label={'Complemento*'}
+        label={'Complemento'}
         variant={'outlined'}
          />
 
        <TextField
-        value={form.bairro}
+        required
+        value={form.neighbourhood}
         onChange={handleInput}
-        name={"bairro"}
+        name={"neighbourhood"}
         margin={'normal'}
-        label={'Bairro*'}
+        label={'Bairro'}
         variant={'outlined'}
          />
 
        <TextField
-        value={form.cidade}
+        required
+        value={form.city}
         onChange={handleInput}
-        name={"cidade"}
+        name={"city"}
         margin={'normal'}
-        label={'Cidade*'}
+        label={'Cidade'}
         variant={'outlined'}
          />
          <TextField
-        value={form.estado}
+        required
+        value={form.state}
         onChange={handleInput}
-        name={"estado"}
+        name={"state"}
         margin={'normal'}
-        label={'Estado*'}
+        label={'Estado'}
         variant={'outlined'}
          />
-        <ButtonSalvar>Salvar</ButtonSalvar>
+        <ButtonSalvar onClick={updateProfile}>Salvar</ButtonSalvar>
         </FormContainer>
         </UserContainer>
     )

@@ -9,6 +9,7 @@ const GlobalState = (props) => {
   const [cart, setCart] = useState([]);
   const [title, setTitle] = useState("4FoodB"); //guardar o título da janela na TopBar
 
+
   const getRestaurants = () => {
     axios.get(`${UrlApi}/restaurants`, {
       headers: {
@@ -38,7 +39,8 @@ const GlobalState = (props) => {
   };
 
 
-const states = { restaurant, restaurants, cart, title };
+
+const states = { restaurant, restaurants, cart, title};
 const setters = { setRestaurant, setRestaurants, setCart, setTitle };
 const requests = { getRestaurants, getRestaurantDetail };
 
