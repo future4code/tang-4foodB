@@ -49,7 +49,7 @@ export const Profile = () => {
         .catch((error) => {
           console.log(error);
         });
-        
+      
     };
 
     const getOrdersHistory = () => {

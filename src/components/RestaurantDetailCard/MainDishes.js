@@ -1,21 +1,27 @@
-import React from 'react';
-//import {ItemPopUp} from './ItemPopUp'
+import React, {useState} from 'react';
 import {DishesContainer, TinyImage, TitleParagraph,  TinyDetailParagraph, TinyDiv, PriceParagraph, AddButton} from './styled'
-import food from "../../img/food.jpg"
+import PopUp from '../PopUp/PopUp'
+import { ChooseQuantity } from '../ChooseQuantity/ChooseQuantity';
 
-
-export const MainDishes = () => {
-
+export const MainDishes = (props) => {
+    const [openPopup, setOpenPopup] = useState(false)
     return (
         <DishesContainer>
-            <TinyImage src={food}/>
+            <chooseQuantity/>
+            <TinyImage src={props.photo}/>
             <TinyDiv>
-                    <TitleParagraph>Bullguer</TitleParagraph>
+                    <TitleParagraph>{props.name}</TitleParagraph>
                 {/* <ItemPopUp/> */}
-                    <TinyDetailParagraph>Pão, carne, queijo, picles e molho</TinyDetailParagraph>
-                <PriceParagraph>R$ 20,00</PriceParagraph>
-                <AddButton>Adicionar</AddButton>
+                    <TinyDetailParagraph>{props.description}</TinyDetailParagraph>
+                <PriceParagraph>{`R$ ${props.price}`}</PriceParagraph>
+                <AddButton onClick={()=> setOpenPopup(true)}>Adicionar</AddButton>
             </TinyDiv>
+        <PopUp 
+        openPopup = {openPopup}
+        setOpenPopup = {setOpenPopup}>
+        <ChooseQuantity/>
+        </PopUp>
         </DishesContainer>
+        
     )
 }

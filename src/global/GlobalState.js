@@ -38,6 +38,21 @@ const GlobalState = (props) => {
     return restaurant;
   };
 
+  //esse daqui é o PlaceOrder da API
+  const setOrder = (restId) => {
+    axios.post(`${UrlApi}/restaurants/${restId}/order`,  {
+      headers: {
+        auth: localStorage.getItem('token'),
+        "Content-Type": "application/json"
+      }
+    }).then((response) => {
+      setCart(response.data.products)
+    }).catch((error) => {
+      console.log(error)
+    })
+    return cart;
+  }
+
 
 
 const states = { restaurant, restaurants, cart, title};

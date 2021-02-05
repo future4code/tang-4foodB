@@ -23,7 +23,7 @@ export const TinyImage = styled.img`
     width: 6rem;
     border-radius: 8px 0px 0px 8px;
     display: flex;
-    flex-wrap: wrap;
+    flex: grow;
     margin-left: -0.030rem;
 `
 export const TinyDetailParagraph = styled.p`
@@ -64,7 +64,8 @@ export const AddButton = styled.button`
     align-self: flex-end;
     width: 5.625rem;
     height: 1.938rem;
-    margin-top: -12%;
+    margin-top: -33px;
+    margin-right: -2px; 
     padding: 0.5rem 1.281rem 0.563rem 1.344rem;
     border-radius: 8px 0px;
     border: solid 1.4px black;

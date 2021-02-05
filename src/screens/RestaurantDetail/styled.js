@@ -3,7 +3,7 @@ import styled from 'styled-components';
 /* Estilos RestaurantDetail */
 export const MainDiv = styled.div`
     width: 22,5rem;
-    height: fit-content;
+    height: fit-content; 
     padding: 0 0;
     display: flex;
     flex-direction: column;
@@ -18,6 +18,7 @@ export const RestaurantContainer = styled.div`
     height: 90%;
     border-radius: 10px;
     margin-top: 20px;
+    margin-bottom: 60px;
     background-color: white;
 `
 

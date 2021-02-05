@@ -15,19 +15,69 @@ export const RestaurantDetail = () => {
     useEffect(() => {
         requests.getRestaurantDetail(pathParams.id)
     }, [])
-
+    
     const produtos = states.restaurant.products
-    // const ordenado = produtos.sort( 
-    //     (p1, p2) => {
-    //         if (p1.category < p2.category) {
-    //             return 1
-    //         } else if (p1.category > p2.category) {
-    //             return -1
-    //         } else {
-    //             return 0
-    //         }
-    //     })
-     
+    console.log(produtos)
+    // filtros
+    const filterAcompanhamento = produtos && produtos.filter((item) => {
+        return item.category === "Acompanhamento"
+    })
+    const filterBebida = produtos && produtos.filter((item) => {
+        return item.category === "Bebida"
+    })
+    const filterSalgado = produtos && produtos.filter((item) => {
+        return item.category === "Salgado"
+    })
+    const filterPizza = produtos && produtos.filter((item) => {
+        return item.category === "Pizza"
+    })
+    const filterPastel = produtos && produtos.filter((item) => {
+        return item.category === "Pastel"
+    })
+
+    // Renderização dos arrays dos filtros
+   const renderAcompanhamento = filterAcompanhamento && filterAcompanhamento.map((item) => {
+        return <MainDishes key={item.id}
+                photo={item.photoUrl}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+        />
+    }) 
+    const renderBebida = filterBebida && filterBebida.map((item) => {
+        return <MainDishes key={item.id}
+                photo={item.photoUrl}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+        />
+    }) 
+    const renderSalgado = filterSalgado && filterSalgado.map((item) => {
+        return <MainDishes key={item.id}
+                photo={item.photoUrl}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+        />
+    }) 
+    const renderPizza = filterPizza && filterPizza.map((item) => {
+        return <MainDishes key={item.id}
+                photo={item.photoUrl}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+        />
+    }) 
+    const renderPastel = filterPastel && filterPastel.map((item) => {
+        return <MainDishes key={item.id}
+                photo={item.photoUrl}
+                name={item.name}
+                description={item.description}
+                price={item.price}
+        />
+    }) 
+
+    
    
 
     return (
@@ -42,15 +92,28 @@ export const RestaurantDetail = () => {
                     <DetailParagraph>Frete: R$ {states.restaurant.shipping}</DetailParagraph>
                 </DetailParagraphContainer>
                 <DetailAdress>{states.restaurant.address}</DetailAdress>
-                {/* renderizar array states.restaurant.produtos */}
-                <SecondTitleParagraph>Principais</SecondTitleParagraph>
+               
+                <SecondTitleParagraph>Pizza</SecondTitleParagraph>
                 <ExtrasContainer>
-                    {/* <MainDishes /> */}
+                  {renderPizza} 
+                </ExtrasContainer>
+                <SecondTitleParagraph>Pastel</SecondTitleParagraph>
+                <ExtrasContainer>
+                  {renderPastel}
+                </ExtrasContainer>
+                <SecondTitleParagraph>Salgados</SecondTitleParagraph>
+                <ExtrasContainer>
+                  {renderSalgado}
                 </ExtrasContainer>
                 <SecondTitleParagraph>Acompanhamento</SecondTitleParagraph>
                 <ExtrasContainer>
-                    <SideDishes />
+                   {renderAcompanhamento}
                 </ExtrasContainer>
+                <SecondTitleParagraph>Bebidas</SecondTitleParagraph>
+                <ExtrasContainer>
+                  {renderBebida}
+                </ExtrasContainer>
+               
                 {/* termina aqui */}
             </RestaurantContainer>
             <BottomBar />
