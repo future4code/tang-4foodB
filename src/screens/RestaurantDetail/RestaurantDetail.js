@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import { SideDishes } from '../../components/RestaurantDetailCard/SideDishes'
 import { MainDishes } from '../../components/RestaurantDetailCard/MainDishes'
 import { MainDiv, RestaurantContainer, DetailParagraphContainer, ExtrasContainer, FirstImage, DetailParagraph, DetailAdress, TitleParagraph, SecondTitleParagraph } from './styled'
 import { BottomBar } from '../../components/BottomBar/BottomBar';
@@ -19,10 +18,43 @@ export const RestaurantDetail = () => {
     const produtos = states.restaurant.products
     console.log(produtos)
     // filtros
-    const filterAcompanhamento = produtos && produtos.filter((item) => {
-        return item.category === "Acompanhamento"
-    })
-    const filterBebida = produtos && produtos.filter((item) => {
+    const filterProdutos = produtos && produtos.filter((item) => {
+        switch (item.category){
+            case 'Acompanhamento':
+                return item.category === "Acompanhamento"
+                break;
+            case 'Bebida':
+                return item.category === "Bebida";
+                break;
+            case 'Salgado':
+                return item.category === "Salgado"
+                break;
+            case 'Pizza': 
+                return item.category === "Refeição"
+                break;
+            case 'Pastel':
+                return item.category === "Pastel"
+                break;
+            case 'Refeição':
+                return item.category === "Refeição"
+                break;
+            case 'Lanche':
+                return item.category === "Lanche"
+                break;
+            case 'Sorvete':
+                return item.category === "Sorvete"
+                break;
+            case 'Outros':
+                return item.category === "Outros"
+                break;
+            case 'Doce':
+                return item.category === "Doce"
+                break;
+            
+            default: 
+                console.log("entrou no default")
+        }})
+    /* const filterBebida = produtos && produtos.filter((item) => {
         return item.category === "Bebida"
     })
     const filterSalgado = produtos && produtos.filter((item) => {
@@ -33,10 +65,10 @@ export const RestaurantDetail = () => {
     })
     const filterPastel = produtos && produtos.filter((item) => {
         return item.category === "Pastel"
-    })
+    }) */
 
     // Renderização dos arrays dos filtros
-   const renderAcompanhamento = filterAcompanhamento && filterAcompanhamento.map((item) => {
+   /* const renderAcompanhamento = filterAcompanhamento && filterAcompanhamento.map((item) => {
         return <MainDishes key={item.id}
                 photo={item.photoUrl}
                 name={item.name}
@@ -75,7 +107,20 @@ export const RestaurantDetail = () => {
                 description={item.description}
                 price={item.price}
         />
-    }) 
+    })  */
+
+    const renderProdutos = filterProdutos && filterProdutos.map((item) => {
+        return <div>
+            <SecondTitleParagraph>{item.category}</SecondTitleParagraph>
+            <MainDishes key={item.id}
+            photo={item.photoUrl}
+            name={item.name}
+            description={item.description}
+            price={item.price}
+            />
+        </div> 
+                
+    })
 
     
    
@@ -93,11 +138,11 @@ export const RestaurantDetail = () => {
                 </DetailParagraphContainer>
                 <DetailAdress>{states.restaurant.address}</DetailAdress>
                
-                <SecondTitleParagraph>Pizza</SecondTitleParagraph>
+                <SecondTitleParagraph>Produtos</SecondTitleParagraph>
                 <ExtrasContainer>
-                  {renderPizza} 
+                  {renderProdutos} 
                 </ExtrasContainer>
-                <SecondTitleParagraph>Pastel</SecondTitleParagraph>
+                {/* <SecondTitleParagraph>Pastel</SecondTitleParagraph>
                 <ExtrasContainer>
                   {renderPastel}
                 </ExtrasContainer>
@@ -113,7 +158,7 @@ export const RestaurantDetail = () => {
                 <ExtrasContainer>
                   {renderBebida}
                 </ExtrasContainer>
-               
+                */}
                 {/* termina aqui */}
             </RestaurantContainer>
             <BottomBar />
