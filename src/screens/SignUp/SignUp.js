@@ -7,16 +7,49 @@ import useForm from '../../hooks/useForm';
 import { goToAddress } from "../../routes/Coordinator";
 import axios from 'axios';
 import {UrlApi} from '../../constants/urls'
+//password imports abaixo//
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import FormControl from '@material-ui/core/FormControl';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
+// - password estilização - //;
+const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    margin: {
+      margin: theme.spacing(1),
+    },
+    withoutLabel: {
+      marginTop: theme.spacing(3),
+    },
+    textField: {
+      width: '40ch',
+    },
+  }));
+
+// -----*--- fim password estilização----*--- //
 
 export const SignUp = () => {
     const history = useHistory();
+    //aqui sou eu de novo fazendo o password funcionar//
+    const classes = useStyles();
+    const [values, setValues] = React.useState({ 
+        password: '',
+    showPassword: false,
+  });
+// --------*----pronto-------*-------- //
     const [form, onChangeForm] = useForm({
         name: '',
         email: '',
         cpf: '',
-        password: '',
-        confirmPassword: '',
     });
 
     const onSubmitForm = (event) => {
@@ -25,7 +58,6 @@ export const SignUp = () => {
                 name:form.name,
                 email: form.email,
                 cpf: form.cpf,
-                password: form.password
               };
           
               axios
@@ -44,6 +76,20 @@ export const SignUp = () => {
         
         goToAddress(history);
     }
+
+     //bruna passando outra vez //
+     const handleChange = (prop) => (event) => {
+        setValues({ ...values, [prop]: event.target.value });
+      };
+    
+      const handleClickShowPassword = () => {
+        setValues({ ...values, showPassword: !values.showPassword });
+      };
+    
+      const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+      };
+    // terminando aqui de novo ///
     
     return (
         <SignUpContainer>
@@ -83,31 +129,73 @@ export const SignUp = () => {
                         onChange={onChangeForm}
                         value={form.cpf} />
                     <br />
+            <div
+             className={classes.root}>
+            <div>
+            <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
+                  <InputLabel htmlFor="outlined-adornment-password">
+                    Senha
+                  </InputLabel>
+                <OutlinedInput
+                     id="outlined-adornment-password"
+                     type={values.showPassword ? 'text' : 'password'}
+                     value={values.password}
+                     onChange={handleChange('password')}
+                     endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                  {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+                </InputAdornment>
+                    }
+                    labelWidth={70}
+                />
+                </FormControl>
+        
+            </div>
+            </div>
+            <div
+             className={classes.root}>
+            <div>
+            <FormControl className={clsx(classes.margin, classes.textField)} variant="outlined">
+                  <InputLabel htmlFor="outlined-adornment-password">
+                    Confirmar Senha
+                  </InputLabel>
+                <OutlinedInput
+                     id="outlined-adornment-password"
+                     type={values.showPassword ? 'text' : 'password'}
+                     value={values.password}
+                     onChange={handleChange('password')}
+                     endAdornment={
+                <InputAdornment position="end">
+                  <IconButton
+                    aria-label="toggle password visibility"
+                    onClick={handleClickShowPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    edge="end"
+                  >
+                  {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                </IconButton>
+                </InputAdornment>
+                    }
+                    labelWidth={70}
+                />
+                </FormControl>
+        
+            </div>
+            </div>
+            
 
-                    <TextField required
-                        id="password"
-                        name="password"
-                        label="Senha"
-                        type="password"
-                        variant="outlined"
-                        placeholder="Mínimo 6 caracteres"
-                        onChange={onChangeForm}
-                        value={form.password} />
-                    <br />
-
-                    <TextField required
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        label="Confirmar Senha"
-                        type="password"
-                        variant="outlined"
-                        placeholder="Confirme a senha anterior"
-                        onChange={onChangeForm}
-                        value={form.confirmPassword} />
 
                 <Button> Criar</Button>
                 </FormContainer>
             </form>
+            
         </SignUpContainer>
     )
 }
