@@ -7,6 +7,7 @@ const GlobalState = (props) => {
   const [restaurants, setRestaurants] = useState([]);
   const [restaurant, setRestaurant] = useState([]);
   const [cart, setCart] = useState([]);
+  const [quantity, setQuantity] = useState([]);
   const [title, setTitle] = useState("4FoodB"); //guardar o título da janela na TopBar
 
 
@@ -53,10 +54,11 @@ const GlobalState = (props) => {
     return cart;
   }
 
+   
 
 
-const states = { restaurant, restaurants, cart, title};
-const setters = { setRestaurant, setRestaurants, setCart, setTitle };
+const states = { restaurant, restaurants, cart, title, quantity};
+const setters = { setRestaurant, setRestaurants, setCart, setTitle, setQuantity };
 const requests = { getRestaurants, getRestaurantDetail };
 
 const data = { states, setters, requests };

@@ -6,6 +6,7 @@ export const RestContainer = styled.div`
     justify-content: center;
     flex-direction: column;
     margin-bottom: 8px;
+    margin-left: 13px;
     width: 90%;
     height: 11.75rem;
     border-radius: 8px;

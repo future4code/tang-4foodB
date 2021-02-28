@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import GlobalStateContext from '../../global/GlobalStateContext'
 import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -27,16 +27,32 @@ const useStyles = makeStyles((theme) => ({
 export function ChooseQuantity() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false); 
-  const [quantity, setQuantity] = React.useState('');
+  const { states, requests, setters } = useContext(GlobalStateContext);
+  
 
   const handleChange = (event) => {
-    setQuantity(Number(event.target.value) || '');
+    setters.setQuantity(Number(event.target.value) || '');
   };
+  console.log(states.quantity)
 
 
   const handleClose = () => {
     setOpen(false);
   }; 
+
+  // aqui tentamos fazer uma função de adicionar ao carrinho, mas não funcionou kkk
+  /* const adicionarAoCarrinho = (id) => {
+        const novoProduto = states.restaurant.products((produto) => id === produto.id);
+        let novaLista = [
+          ...this.states.cart,
+          { ...novoProduto }
+        ];
+  
+        setters.setCart({ cart: novaLista });
+        console.log(states.cart)
+    }; */
+  
+
 
   return (
     
@@ -50,7 +66,7 @@ export function ChooseQuantity() {
                 labelId="demo-dialog-select-label"
                 name="Quantidade"
                 id="demo-dialog-select"
-                value={quantity}
+                value={states.quantity}
                 onChange={handleChange} 
                 input={<Input />}
               >
@@ -76,9 +92,10 @@ export function ChooseQuantity() {
           </form>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>
+          <Button>
             Adicionar ao carrinho
           </Button>
+          
         </DialogActions>
     </div>
   );
