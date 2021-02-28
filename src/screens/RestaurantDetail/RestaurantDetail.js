@@ -54,60 +54,7 @@ export const RestaurantDetail = () => {
             default: 
                 console.log("entrou no default")
         }})
-    /* const filterBebida = produtos && produtos.filter((item) => {
-        return item.category === "Bebida"
-    })
-    const filterSalgado = produtos && produtos.filter((item) => {
-        return item.category === "Salgado"
-    })
-    const filterPizza = produtos && produtos.filter((item) => {
-        return item.category === "Pizza"
-    })
-    const filterPastel = produtos && produtos.filter((item) => {
-        return item.category === "Pastel"
-    }) */
-
-    // Renderização dos arrays dos filtros
-   /* const renderAcompanhamento = filterAcompanhamento && filterAcompanhamento.map((item) => {
-        return <MainDishes key={item.id}
-                photo={item.photoUrl}
-                name={item.name}
-                description={item.description}
-                price={item.price}
-        />
-    }) 
-    const renderBebida = filterBebida && filterBebida.map((item) => {
-        return <MainDishes key={item.id}
-                photo={item.photoUrl}
-                name={item.name}
-                description={item.description}
-                price={item.price}
-        />
-    }) 
-    const renderSalgado = filterSalgado && filterSalgado.map((item) => {
-        return <MainDishes key={item.id}
-                photo={item.photoUrl}
-                name={item.name}
-                description={item.description}
-                price={item.price}
-        />
-    }) 
-    const renderPizza = filterPizza && filterPizza.map((item) => {
-        return <MainDishes key={item.id}
-                photo={item.photoUrl}
-                name={item.name}
-                description={item.description}
-                price={item.price}
-        />
-    }) 
-    const renderPastel = filterPastel && filterPastel.map((item) => {
-        return <MainDishes key={item.id}
-                photo={item.photoUrl}
-                name={item.name}
-                description={item.description}
-                price={item.price}
-        />
-    })  */
+    
 
     const renderProdutos = filterProdutos && filterProdutos.map((item) => {
         return <div>

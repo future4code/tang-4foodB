@@ -76,11 +76,8 @@ export function ChooseQuantity() {
           </form>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
-            Cancel
-          </Button>
-          <Button onClick={handleClose} color="primary">
-            Ok
+          <Button onClick={handleClose}>
+            Adicionar ao carrinho
           </Button>
         </DialogActions>
     </div>
