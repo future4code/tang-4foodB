@@ -69,9 +69,6 @@ export const RestaurantDetail = () => {
                 
     })
 
-    
-   
-
     return (
         <MainDiv>
             <TopBar />
@@ -89,23 +86,6 @@ export const RestaurantDetail = () => {
                 <ExtrasContainer>
                   {renderProdutos} 
                 </ExtrasContainer>
-                {/* <SecondTitleParagraph>Pastel</SecondTitleParagraph>
-                <ExtrasContainer>
-                  {renderPastel}
-                </ExtrasContainer>
-                <SecondTitleParagraph>Salgados</SecondTitleParagraph>
-                <ExtrasContainer>
-                  {renderSalgado}
-                </ExtrasContainer>
-                <SecondTitleParagraph>Acompanhamento</SecondTitleParagraph>
-                <ExtrasContainer>
-                   {renderAcompanhamento}
-                </ExtrasContainer>
-                <SecondTitleParagraph>Bebidas</SecondTitleParagraph>
-                <ExtrasContainer>
-                  {renderBebida}
-                </ExtrasContainer>
-                */}
                 {/* termina aqui */}
             </RestaurantContainer>
             <BottomBar />

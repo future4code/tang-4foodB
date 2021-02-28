@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 export const MainDiv = styled.div`
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -19,6 +21,7 @@ export const Paragraph = styled.p`
 export const FormContainer = styled.div`
     display: flex;
     flex-direction:column;
+    justify-content: center;
     width: 90%;
 `
 
