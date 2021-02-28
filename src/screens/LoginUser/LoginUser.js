@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useHistory } from "react-router-dom";
 import logo from '../../img/logo.png';
-import { FormContainer, LoginContainer, Logo, Button } from './styled';
+import { FormContainer, LoginContainer, Logo, Button, StyledParagraph } from './styled';
 import TextField from '@material-ui/core/TextField';
 import useForm from '../../hooks/useForm';
 import { goToSignup } from "../../routes/Coordinator";
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(3),
     },
     textField: {
-      width: '40ch',
+      width: '87vw',
     },
   }));
 
@@ -50,7 +50,7 @@ export const LoginUser = () => {
   });
 // --------*----pronto-------*-------- //
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [form, onChangeForm] = useForm({
         email: '',   
 });
@@ -59,6 +59,7 @@ export const LoginUser = () => {
         event.preventDefault()
         const body = {
             email: form.email,
+            password: values.password,
     
           };
       
@@ -142,16 +143,15 @@ export const LoginUser = () => {
             </div>
             </div>
 
-                <Button>
+                <Button><strong>
                  Entrar
-                </Button>
+                </strong></Button>
             </FormContainer>
 
             </form>
              
-            <Roller/>
-            <p>Não possui cadastro?</p>
-            <p onClick={()=> goToSignup(history)}> Clique aqui.</p>
+            {/* <Roller/> */}
+            <StyledParagraph onClick={()=> goToSignup(history)}> Não possui cadastro? Clique aqui.</StyledParagraph>
         
         </LoginContainer>
     )

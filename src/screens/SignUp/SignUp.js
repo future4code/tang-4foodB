@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from "react-router-dom";
 import logo from '../../img/logo.png';
-import { FormContainer, Logo, Button, SignUpContainer } from './styled';
+import { FormContainer, Logo, Button, SignUpContainer, Cadastrar } from './styled';
 import TextField from '@material-ui/core/TextField';
 import useForm from '../../hooks/useForm';
 import { goToAddress } from "../../routes/Coordinator";
@@ -25,13 +25,13 @@ const useStyles = makeStyles((theme) => ({
       flexWrap: 'wrap',
     },
     margin: {
-      margin: theme.spacing(1),
+      margin: '10px',
     },
     withoutLabel: {
       marginTop: theme.spacing(3),
     },
     textField: {
-      width: '40ch',
+      width: '88vw',
     },
   }));
 
@@ -94,7 +94,7 @@ export const SignUp = () => {
     return (
         <SignUpContainer>
             <Logo src={logo}></Logo>
-            <h3>Cadastrar</h3>
+            <Cadastrar>Cadastrar</Cadastrar>
             <form id={"signup_form"} onSubmit={onSubmitForm}>
                 <FormContainer>
                     <TextField required

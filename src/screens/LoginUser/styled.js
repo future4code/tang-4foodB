@@ -32,16 +32,22 @@ export const FormContainer = styled.div`
     }
 `
 export const Button = styled.button`
-background-color: #e8222e;
-width: 22.5rem;
-height: 2.625rem;
-margin-bottom: 10px;
-margin-top: 20px;
-padding: 0.75rem 1rem;
-border-radius: 2px;
-border: 1px #e8222e;
-font-family: Roboto;
-font-size: 1rem;
-font-weight: normal;
-text-align:center;
+    background-color: #e8222e;
+    width: 87vw;
+    height: 2.625rem;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 0.75rem 1rem;
+    border-radius: 2px;
+    border: 1px #e8222e;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align:center;
+`
+export const StyledParagraph = styled.p`
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
 `
